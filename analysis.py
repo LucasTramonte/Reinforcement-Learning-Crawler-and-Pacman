@@ -19,38 +19,46 @@
 # Set the given parameters to obtain the specified policies through
 # value iteration.
 
+# Prefer the close exit (+1), risking the cliff (-10)
+
 def question2a():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    #The agent prioritizes immediate rewards without worrying about randomness, thus risking the cliff for the close exit.
+    answerDiscount = 0.3
+    answerNoise = 0.0
+    answerLivingReward = -0.5
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question2b():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    #The agent still prefers the close exit but with a slight randomness that makes the cliff risky, thus promoting safer paths.
+    answerDiscount = 0.3
+    answerNoise = 0.2
+    answerLivingReward = -0.5
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question2c():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    #The agent values future rewards highly and takes the risk to achieve the distant exit quickly.
+    answerDiscount = 0.9
+    answerNoise = 0.0
+    answerLivingReward = -2
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question2d():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    #The agent aims for the distant exit but with caution due to the added randomness, avoiding the cliff.
+    answerDiscount = 0.9
+    answerNoise = 0.3
+    answerLivingReward = -1
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question2e():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    # Avoid both exits and the cliff (so an episode should never terminate)
+    #The agent receives a positive reward for each step, encouraging continuous exploration without termination.
+    answerDiscount = 0.9
+    answerNoise = 0.2
+    answerLivingReward = 1
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
